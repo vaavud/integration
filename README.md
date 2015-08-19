@@ -17,6 +17,18 @@ To use Vaavud in your own app, follow the steps below. Read more about custom UR
 
 ## Short version
 
+1. [Register](http://iosdevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html "iOS Developer Tips") a custom URL scheme for your app, for example ```mysimpleapp://```, in ```info.plist```.
+2. Open the Vaavud app and ask it to measure and get back to you with:
+```swift
+let url = NSURL(string: "vaavud://x-callback-url/measure?x-success=mysimpleapp://x-callback-url/measurement")!
+let success = UIApplication.sharedApplication().openURL(url)
+```
+3. Implement this method in your ``ÀppDelegate```to handle the URL that Vaavud calls you back with:
+```swift
+func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
+```
+
+## Long version
 
 ### Opening the Vavud app
 To simply open the Vaavud app and take a measurement, you need to ask your application to open a url that looks like this:```vaavud://x-callback-url/measure```
