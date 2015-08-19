@@ -98,5 +98,7 @@ It remains for you to parse this URL query and use the information in your app. 
     }
 ```
 
+The Vaavud app also returns a key-value pair ```x-source = Vaavud```, following the conventions of *x-url-callback*. Also following these conventions, it will return with ```x-cancel = cancel``` if the user cancels the measurement. Finally, you may want to check the host and path of the URL and return ```false```if they are not as expected.
+
 
 
