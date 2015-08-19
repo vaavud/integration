@@ -46,8 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        println(url)
-        
         if sourceApplication != "com.vaavud.Vaavud" {
             // Called by the wrong app
             return false
