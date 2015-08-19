@@ -47,4 +47,4 @@ In most cases you will also want the Vaavud app to get back to you with the meas
 3. Choose to create **URL Types**
 4. Open **Item 0** and type in an identifier of your choice as the string for **URL identifier**, e.g. *com.mycompany.myapp*
 5. Press to **+** next to **Item 0** and create a new **URL Schemes** array.
-6. Open **URL Schemes**, select its **Item 0** and type in the *scheme* you want to use in your app (see above).
+6. Open **URL Schemes**, select its **Item 0** and type in the *scheme* you want to use in your app (see above), e.g. *mysimpleapp*.
