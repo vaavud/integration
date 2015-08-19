@@ -66,7 +66,7 @@ In most cases you will also want the Vaavud app to get back to you with the meas
 5. Press to **+** next to **Item 0** and create a new **URL Schemes** array.
 6. Open **URL Schemes**, select its **Item 0** and type in the *scheme* you want to use in your app (see above), e.g. *mysimpleapp*.
 
-Now your device will now that your app should handle, or at least get the option to handle, all urls with the scheme *mysimpleapp://*.
+Now your device will know that your app should handle, or at least get the option to handle, all urls with the scheme *mysimpleapp://*.
 
 #### 2. Tell the Vaavud app about your scheme
 Now you need to decide what your own custom URL scheme should look like. You have already selected the scheme *mysimpleapp*, but the rest is up to you. Let's say you also want to use ```x-callback-url```as host and ```measurement```as path. Then the complete callback url will look like this:
