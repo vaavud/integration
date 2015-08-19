@@ -66,6 +66,13 @@ In this case we need you to supply your callback url as the value for the key *x
 ```
 vaavud://x-callback-url/measure?x-success=mysimpleapp://x-callback-url/measurement
 ```
+So, replace your old code with this:
 
+```swift
+let url = NSURL(string: "vaavud://x-callback-url/measure?x-success=mysimpleapp://x-callback-url/measurement")!
+UIApplication.sharedApplication().openURL(url)
+```
+
+To be on the safe side, especially if you will be using special characters in your callback, you can also create the url with ```NSURLComponents```, as we do in the example app.
 
 ### 3. Handle the callback from Vaavud in your app
