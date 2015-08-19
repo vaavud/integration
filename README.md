@@ -40,7 +40,7 @@ In most cases you will also want the Vaavud app to get back to you with the meas
 2. Send information about this URL scheme to the Vaavud app when opening it
 3. Make your app handle the callback from the Vaavud app
 
-### Register a custom URL scheme
+### 1. Register a custom URL scheme
 
 1. Open your info.plist file
 2. Press the **+** on the heading (**Information Property List**) to add a new property
@@ -48,3 +48,24 @@ In most cases you will also want the Vaavud app to get back to you with the meas
 4. Open **Item 0** and type in an identifier of your choice as the string for **URL identifier**, e.g. *com.mycompany.myapp*
 5. Press to **+** next to **Item 0** and create a new **URL Schemes** array.
 6. Open **URL Schemes**, select its **Item 0** and type in the *scheme* you want to use in your app (see above), e.g. *mysimpleapp*.
+
+Now your device will now that your app should handle, or at least get the option to handle, all urls with the scheme *mysimpleapp://*.
+
+### 2. Tell the Vaavud app about your scheme
+Now you need to decide what your own custom URL scheme should look like. You have already selected the scheme *mysimpleapp*, but the rest is up to you. Let's say you also want to use ```x-callback-url```as host and ```measurement```as path. Then the complete callback url will look like this:
+
+```
+mysimpleapp://x-callback-url/measurement
+```
+
+This has to go in the *query* of the url that **you** use to call **Vaavud**. The query is a sort of dictionary with keys and values and it is the part of a url that follows the interrogation mark:
+```
+somescheme://somehost/somepath?key1=value1&key2=value2
+```
+In this case we need you to supply your callback url as the value for the key *x-success*, so instead of opening the Vaavud app as before, you will use this url:
+```
+vaavud://x-callback-url/measure?x-success=mysimpleapp://x-callback-url/measurement
+```
+
+
+### 3. Handle the callback from Vaavud in your app
