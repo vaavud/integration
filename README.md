@@ -8,7 +8,7 @@
 </h3>
 
 [![Twitter: @Vaavud](https://img.shields.io/badge/contact-%40Vaavud-blue.svg)](https://twitter.com/Vaavud)
-[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/KrauseFx/snapshot/blob/master/LICENSE)
+[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/vaavud/integration/blob/master/LICENSE)
 
 Demonstrates how to easily integrate your app with Vaavud using URL schemes
 
