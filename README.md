@@ -23,7 +23,7 @@ To use Vaavud in your own app, follow the steps below. Read more about custom UR
 let url = NSURL(string: "vaavud://x-callback-url/measure?x-success=mysimpleapp://x-callback-url/measurement")!
 let success = UIApplication.sharedApplication().openURL(url)
 ```
-3. Implement this method in your ``ÀppDelegate```to handle the URL that Vaavud calls you back with:
+3. Implement this method in your ```ÀppDelegate``` to handle the URL that Vaavud calls you back with:
 ```swift
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
 ```
