@@ -13,6 +13,7 @@
 		22E027421B847EFC00532981 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E027411B847EFC00532981 /* Images.xcassets */; };
 		22E027451B847EFC00532981 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E027431B847EFC00532981 /* LaunchScreen.xib */; };
 		22E027511B847EFC00532981 /* SimpleVaavudIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E027501B847EFC00532981 /* SimpleVaavudIntegrationTests.swift */; };
+		22E0275B1B84C78000532981 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 22E0275A1B84C78000532981 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		22E0274A1B847EFC00532981 /* SimpleVaavudIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleVaavudIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E0274F1B847EFC00532981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E027501B847EFC00532981 /* SimpleVaavudIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleVaavudIntegrationTests.swift; sourceTree = "<group>"; };
+		22E0275A1B84C78000532981 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		22E027381B847EFC00532981 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22E0275A1B84C78000532981 /* README.md */,
 				22E027391B847EFC00532981 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E0275B1B84C78000532981 /* README.md in Sources */,
 				22E0273D1B847EFC00532981 /* ViewController.swift in Sources */,
 				22E0273B1B847EFC00532981 /* AppDelegate.swift in Sources */,
 			);
