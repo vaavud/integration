@@ -105,14 +105,14 @@ mysimpleapp://x-callback-url/measurement?x-source=Vaavud&windSpeedAvg=5.23&windS
 It remains for you to parse this URL query and use the information in your app. In the example app there is a basic parser that returns the value for a supplied key if present, otherwise ```nil```. With the help of this we extract the average windspeed and tell our ViewController to display it.
 
 ```swift
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        if let vc = window?.rootViewController as? ViewController,
-            windspeedString = parseUrlQuery(url, key: "windSpeedAvg") {
-                vc.displayMessage("The wind is " + windspeedString + " m/s")
-        }
-        
-        return true
+func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    if let vc = window?.rootViewController as? ViewController,
+        windspeedString = parseUrlQuery(url, key: "windSpeedAvg") {
+            vc.displayMessage("The wind is " + windspeedString + " m/s")
     }
+    
+    return true
+}
 ```
 
 The Vaavud app also returns a key-value pair ```x-source = Vaavud```, following the conventions of *x-callback-url*. Also following these conventions, it will return with ```x-cancel = cancel``` if the user cancels the measurement. Finally, you may want to check the host and path of the URL and return ```false```if they are not as expected.
