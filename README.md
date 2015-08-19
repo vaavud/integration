@@ -70,7 +70,7 @@ So, replace your old code with this:
 
 ```swift
 let url = NSURL(string: "vaavud://x-callback-url/measure?x-success=mysimpleapp://x-callback-url/measurement")!
-UIApplication.sharedApplication().openURL(url)
+let success = UIApplication.sharedApplication().openURL(url)
 ```
 
 To be on the safe side, especially if you will be using special characters in your callback, you can also create the url with ```NSURLComponents```, as we do in the example app.
