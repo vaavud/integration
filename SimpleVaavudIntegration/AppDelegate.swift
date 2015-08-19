@@ -67,13 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }}
         
         return true
-        
-        
-        if let vc = window?.rootViewController as? ViewController,
-            windspeed = parseUrlQuery(url, key: "windSpeedAvg") {
-                vc.displayMessage("The wind is " + windspeed + " m/s")
-        }
-        
     }
     
     func parseUrlQuery(url: NSURL, key: String) -> String? {
