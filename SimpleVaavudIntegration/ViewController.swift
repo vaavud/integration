@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func displayWind(string: String) {
-        windLabel.text = "The wind is " + string + " m/s"
+    func displayMessage(string: String) {
+        windLabel.text = string
     }
 }
