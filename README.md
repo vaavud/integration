@@ -73,6 +73,30 @@ let url = NSURL(string: "vaavud://x-callback-url/measure?x-success=mysimpleapp:/
 let success = UIApplication.sharedApplication().openURL(url)
 ```
 
-To be on the safe side, especially if you will be using special characters in your callback, you can also create the url with ```NSURLComponents```, as we do in the example app.
+To be on the safe side, especially if you will be using special characters in your callback, you can also create the URL with ```NSURLComponents```, as we do in the example app.
 
 ### 3. Handle the callback from Vaavud in your app
+Now you need to implement the method on your ``ÀppDelegate``` that handles URL scheme calls, namely
+```swift
+func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
+```
+
+This method will gett called with a URL that begins with your scheme, your selected host and path and in the query the Vaavud app will put wind information, for example like this:
+```
+mysimpleapp://x-callback-url/measurement?x-source=Vaavud&windSpeedAvg=5.23&windSpeedMax=7.93
+```
+It remains for you to parse this URL query and use the information in your app. In the example app there is a basic parser that returns the value for a supplied key if present, otherwise ```nil```. With the help of this we extract the average windspeed and tell our ViewController to display it.
+
+```swift
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        if let vc = window?.rootViewController as? ViewController,
+            windspeedString = parseUrlQuery(url, key: "windSpeedAvg") {
+                vc.displayMessage("The wind is " + windspeedString + " m/s")
+        }
+        
+        return true
+    }
+```
+
+
+
