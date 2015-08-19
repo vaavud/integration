@@ -40,7 +40,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        if sourceApplication != "com.vaavud.Vaavud" {
+            // Called by the wrong app
+            return false
+        }
+        
+        if url.path != "/measurement" {
+            // Incorrect path
+            return false
+        }
+        
+        if let vc = window?.rootViewController as? ViewController {
+            if let cancelled = parseUrlQuery(url, key: "x-cancelled") {
+                vc.displayWind("Cancelled")
+            }
+            else if let windspeed = parseUrlQuery(url, key: "windSpeedAvg") {
+                vc.displayWind(windspeed)
+            }}
+        
+        return true
+    }
+    
+    func parseUrlQuery(url: NSURL, key: String) -> String? {
+        if let items = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?.queryItems as? [NSURLQueryItem],
+            item = items.filter({ $0.name == key }).first {
+                return item.value ?? ""
+        }
+        
+        return nil
+    }
 }
 

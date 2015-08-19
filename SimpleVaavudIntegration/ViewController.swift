@@ -9,17 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var windLabel: UILabel!
+    
+    @IBAction func measureWindTapped(sender: UIButton) {
+        measureWind()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func measureWind() {
+        let components = NSURLComponents()
+        components.scheme = "vaavud"
+        components.host = "x-callback-url"
+        components.path = "/measure"
+        components.queryItems = [NSURLQueryItem(name: "x-success", value: "mysimpleapp://x-callback-url/measurement")]
+        
+        if let url = components.URL {
+            UIApplication.sharedApplication().openURL(url)
+        }
     }
-
-
+    
+    func displayWind(string: String) {
+        windLabel.text = "The wind is " + string + " m/s"
+    }
 }
-
