@@ -93,7 +93,7 @@ let success = UIApplication.sharedApplication().openURL(url)
 To be on the safe side, especially if you will be using special characters in your callback, you can also create the URL with ```NSURLComponents```, as we do in the example app.
 
 #### 3. Handle the callback from Vaavud in your app
-Now you need to implement the method on your ``ÀppDelegate``` that handles URL scheme calls, namely
+Now you need to implement the method on your ```ÀppDelegate``` that handles URL scheme calls, namely
 ```swift
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
 ```
