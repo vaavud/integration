@@ -1,5 +1,3 @@
-# SimpleVaavudIntegration
-
 <h3 align="center">
   <a href="https://www.vaavud.com">
     <img src="http://vaavud.com/brand/Vaavud_logo_vertical_RGB.png" width="400" />
@@ -10,6 +8,8 @@
 [![Language: Swift](https://img.shields.io/badge/language-swift-orange.svg)](https://developer.apple.com/swift/)
 [![Twitter: @Vaavud](https://img.shields.io/badge/contact-%40Vaavud-blue.svg)](https://twitter.com/Vaavud)
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/vaavud/integration/blob/master/LICENSE)
+
+# SimpleVaavudIntegration
 
 Demonstrates how to easily integrate your app with Vaavud using URL schemes
 
