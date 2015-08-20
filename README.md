@@ -29,6 +29,10 @@ let success = UIApplication.sharedApplication().openURL(url)
 ```swift
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
 ```
+When the Vaavud app is done taking a measurement the above method will get called with a URL like the following:
+```
+mysimpleapp://x-callback-url/measurement?x-source=Vaavud&windSpeedAvg=5.23&windSpeedMax=7.93
+```
 
 ## Long version
 
@@ -66,7 +70,7 @@ In most cases you will also want the Vaavud app to get back to you with the meas
 5. Press to **+** next to **Item 0** and create a new **URL Schemes** array.
 6. Open **URL Schemes**, select its **Item 0** and type in the *scheme* you want to use in your app (see above), e.g. *mysimpleapp*.
 
-![alt tag](https://raw.githubusercontent.com/vaavud/integration/master/assets/PropertyListScreenshot.png)
+![Your plist.info after these steps ](https://raw.githubusercontent.com/vaavud/integration/master/assets/PropertyListScreenshot.png)
 
 Now your device will know that your app should handle, or at least get the option to handle, all urls with the scheme *mysimpleapp://*.
 
