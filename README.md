@@ -66,6 +66,8 @@ In most cases you will also want the Vaavud app to get back to you with the meas
 5. Press to **+** next to **Item 0** and create a new **URL Schemes** array.
 6. Open **URL Schemes**, select its **Item 0** and type in the *scheme* you want to use in your app (see above), e.g. *mysimpleapp*.
 
+![alt tag](https://raw.github.com/vaavud/integration/assets/PropertyListScreenshot.png)
+
 Now your device will know that your app should handle, or at least get the option to handle, all urls with the scheme *mysimpleapp://*.
 
 #### 2. Tell the Vaavud app about your scheme
