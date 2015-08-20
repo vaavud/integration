@@ -9,14 +9,6 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string></string>
-			</array>
-			<key>CFBundleURLName</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
 				<string>mysimpleapp</string>
 			</array>
 			<key>CFBundleURLName</key>
