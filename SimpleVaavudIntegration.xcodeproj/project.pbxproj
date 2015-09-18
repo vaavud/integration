@@ -156,6 +156,8 @@
 		22E0272D1B847EFC00532981 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Vaavud;
 				TargetAttributes = {
@@ -411,6 +413,7 @@
 				22E027561B847EFC00532981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22E027571B847EFC00532981 /* Build configuration list for PBXNativeTarget "SimpleVaavudIntegrationTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +422,7 @@
 				22E027591B847EFC00532981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
