@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         components.path = "/measure"
         components.queryItems = [NSURLQueryItem(name: "x-success", value: "mysimpleapp://x-callback-url/measurement")]
         
-        if let url = components.URL {
-            UIApplication.sharedApplication().openURL(url)
-        }
+        guard let url = components.URL else { return }
+        
+        UIApplication.sharedApplication().openURL(url)
     }
     
     func displayMessage(string: String) {

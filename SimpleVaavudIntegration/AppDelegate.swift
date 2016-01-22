@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         if sourceApplication != "com.vaavud.Vaavud" {
             // Called by the wrong app
             return false
@@ -57,18 +57,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let vc = window?.rootViewController as? ViewController {
             if let cancelled = parseUrlQuery(url, key: "x-cancelled") {
-                vc.displayMessage("Cancelled")
+                vc.displayMessage("Cancelled: (\(cancelled))")
             }
             else if let windspeed = parseUrlQuery(url, key: "windSpeedAvg") {
-                vc.displayMessage("The wind is " + windspeed + " m/s")
+                vc.displayMessage("The wind is " + windspeed.substringToIndex(windspeed.startIndex.advancedBy(4)) + " m/s")
             }}
         
         return true
     }
     
     func parseUrlQuery(url: NSURL, key: String) -> String? {
-        if let items = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?.queryItems as? [NSURLQueryItem],
-            item = items.filter({ $0.name == key }).first {
+        print(url)
+        
+        if let items = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?.queryItems,
+            item = items.filter( { $0.name == key } ).first {
                 return item.value ?? ""
         }
         
