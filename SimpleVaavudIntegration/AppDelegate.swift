@@ -67,8 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func parseUrlQuery(url: NSURL, key: String) -> String? {
-        print(url)
-        
         if let items = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?.queryItems,
             item = items.filter( { $0.name == key } ).first {
                 return item.value ?? ""
